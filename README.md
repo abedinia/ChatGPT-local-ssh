@@ -38,4 +38,6 @@ curl --location localhost:9999 \
 
 Remember to adjust the address (`localhost:9999`) and the request body (`{"message": "Hello, world!"}`) according to your specific API setup.
 
+![panel](./panel.png)
+
 Now you have set up the ChatGPT SSH access locally with the ability to utilize VPNs, proxies, enhanced privacy, and access to additional network resources. Enjoy the unrestricted usage of chatGPT!
