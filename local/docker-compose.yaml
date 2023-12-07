@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  bot:
+    build: .
+    ports:
+      - "9999:8080"
+    restart: always
