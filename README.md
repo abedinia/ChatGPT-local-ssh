@@ -2,6 +2,8 @@ ChatGPT-local-ssh
 
 This repository provides SSH execution access to chatGPT, allowing users to bypass IP restrictions and connect with other VPNs and proxies. It enables unrestricted usage of chatGPT, while also enhancing privacy and providing access to additional network resources. The supported version of chatGPT is 3.5.
 
+![panel](./panel.png)
+
 To get started, follow these steps:
 
 1. Copy the server code to your remote machine.
@@ -37,7 +39,5 @@ curl --location localhost:9999 \
 ```
 
 Remember to adjust the address (`localhost:9999`) and the request body (`{"message": "Hello, world!"}`) according to your specific API setup.
-
-![panel](./panel.png)
 
 Now you have set up the ChatGPT SSH access locally with the ability to utilize VPNs, proxies, enhanced privacy, and access to additional network resources. Enjoy the unrestricted usage of chatGPT!
