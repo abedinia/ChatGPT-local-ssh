@@ -118,6 +118,19 @@ func serveForm(w http.ResponseWriter, r *http.Request) {
             height: 150px; /* Fixed height */
             overflow-y: auto; /* Enable vertical scrolling */
         }
+        .spinner {
+            border: 5px solid #f3f3f3; /* Light gray border */
+            border-top: 5px solid #3498db; /* Blue border for the top side */
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -128,7 +141,9 @@ func serveForm(w http.ResponseWriter, r *http.Request) {
             <input type="submit" value="Send">
         </form>
         <div id="response"></div>
-        <div id="loading">Loading...</div>
+        <div id="loading" style="display: none;">
+            <div class="spinner"></div>
+        </div>
     </div>
 
     <script>
