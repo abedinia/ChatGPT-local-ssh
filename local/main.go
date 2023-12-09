@@ -9,7 +9,7 @@ import (
 
 func runSSHCommand(message string) (string, error) {
 	privateKeyPath := "/root/.ssh/id_rsa"
-	cmd := exec.Command("ssh", "-i", privateKeyPath, "-o", "StrictHostKeyChecking=no", "USER@IP", fmt.Sprintf("/root/chatgpt/main '%s'", message))
+	cmd := exec.Command("ssh", "-i", privateKeyPath, "-o", "StrictHostKeyChecking=no", "user@ip", fmt.Sprintf("/root/chatgpt/main '%s'", message))
 
 	// Run the command and capture the output
 	output, err := cmd.CombinedOutput()
@@ -111,12 +111,12 @@ func serveForm(w http.ResponseWriter, r *http.Request) {
         }
         
         #response {
-            background-color: white; /* White background */
-            border: 1px solid #ddd; /* Light grey border */
-            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
             margin-top: 20px;
-            height: 150px; /* Fixed height */
-            overflow-y: auto; /* Enable vertical scrolling */
+            height: 350px;
+            overflow-y: auto;
         }
         .spinner {
             border: 5px solid #f3f3f3; /* Light gray border */
