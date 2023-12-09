@@ -100,13 +100,31 @@ func serveForm(w http.ResponseWriter, r *http.Request) {
         #loading {
             display: none;
         }
+        textarea {
+            width: 100%; /* Full width */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: vertical; /* Allow vertical resizing */
+        }
+        
+        #response {
+            background-color: white; /* White background */
+            border: 1px solid #ddd; /* Light grey border */
+            padding: 10px;
+            margin-top: 20px;
+            height: 150px; /* Fixed height */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 style="color: green;">ChatGPT 3.5 Turbo</h1>
         <form id="sshForm">
-            <input type="text" id="message" name="message" placeholder="Enter your message">
+            <textarea id="message" name="message" placeholder="Enter your message" rows="4" cols="50"></textarea>
             <input type="submit" value="Send">
         </form>
         <div id="response"></div>
@@ -136,6 +154,12 @@ func serveForm(w http.ResponseWriter, r *http.Request) {
             };
             xhr.send('message=' + encodeURIComponent(message));
         };
+        document.getElementById('message').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault(); // Prevent the default action to avoid a line break in the textarea
+                document.getElementById('sshForm').dispatchEvent(new Event('submit'));
+            }
+        });
     </script>
 </body>
 </html>
@@ -146,5 +170,5 @@ func serveForm(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", handleRequest)
 	http.HandleFunc("/form", serveForm)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":9999", nil))
 }
