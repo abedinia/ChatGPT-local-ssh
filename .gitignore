@@ -19,3 +19,7 @@
 
 # Go workspace file
 go.work
+
+local/ssh/id_rsa
+local/ssh/id_rsa.pub
+local/ssh/known_hosts
