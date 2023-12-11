@@ -25,7 +25,7 @@ On your local machine, perform the following steps:
 
 To send requests to the API, follow the steps below:
 1. Make sure you have the API running on your local machine.
-2. Access the address `localhost:9999/` on your preferred tool (e.g., cURL).
+2. Access the address `localhost:9999/form` on browser or `localhost:9999/` on your preferred tool (e.g., cURL).
 3. Send a POST request to the address with the following parameters:
 - Header: Content-Type: application/json
 - Body: {"message": "Hello, world!"}
